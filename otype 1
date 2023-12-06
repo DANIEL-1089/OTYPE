@@ -1,0 +1,44 @@
+#include <iostream>
+#include <ctime>
+#include <wchar.h>
+#include <Windows.h>
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <string.h>
+#include <stdlib.h>
+#include <cstring>
+#include <conio.h>
+#include <iomanip>
+#include <process.h>
+#include <ctime>
+#include <cstdlib>
+#include <typeinfo>
+#include <fstream>
+#include <strstream>
+
+
+
+using namespace std;
+
+
+
+int main(int argc, char* argv[])
+{
+    if (argc != 2) {
+        cerr << "\nthe format of the otype file_name command";
+        exit(1);
+    }
+    char ch;
+    ifstream infile;
+    infile.open(argv[1]);
+    if (!infile) {
+        cerr << "\nIt is impossible to open " << argv[1];
+        exit(-1);
+    }
+    while (infile.get(ch) != 0)
+        cout << ch;
+
+
+    return 0;
+}
